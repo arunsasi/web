@@ -45,7 +45,7 @@ body {
     color: #c72b11 !important;
 }
 
-.nav .traffic-updated a {
+.nav .traffic-updates a {
     color: #20603c !important;
 }
 
@@ -385,6 +385,14 @@ footer .copyright .officaltext {
     color: #62198d;
 }
 
+.inner-page-contents .page-heading h1.title-alerts {
+    color: #122e5e;
+}
+
+.inner-page-contents .page-heading h1.title-traffic-updates {
+    color: #20603c;
+}
+
 h1,
 h2,
 h3 {
@@ -394,4 +402,29 @@ h3 {
 
 .fa-20x {
     font-size: 20px;
+}
+
+strong.formRequired {
+    color: red;
+}
+
+.pagination {
+    margin-top: 0;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.embed-responsive-100x400px {
+    padding-bottom: 430px;
 }

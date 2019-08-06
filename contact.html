@@ -38,7 +38,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="home"><a href="index.html">Home</a></li>
-                        <li class="traffic-updated"><a href="traffic-updated.html">Traffic Updates</a></li>
+                        <li class="traffic-updates"><a href="traffic-updates.html">Traffic Updates</a></li>
                         <li class="alerts"><a href="alerts.html">Alerts</a></li>
                         <li class="contact"><a href="contact.html">Contact</a></li>
                     </ul>
@@ -91,7 +91,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
-                                <label class="control-label" for="accidentLocation">Accident Location</label>
+                                <label class="control-label" for="accidentLocation">Accident Location<strong class="formRequired">*</strong></label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="fa fa-map-marker"></i>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group">
-                                <label class="control-label" for="accidentDateTime">Accident Date &amp; Time</label>
+                                <label class="control-label" for="accidentDateTime">Accident Date &amp; Time<strong class="formRequired">*</strong></label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
@@ -115,7 +115,7 @@
                     <div class="row">
                         <div class="col-sm-12 ">
                             <div class="form-group">
-                                <label class="control-label" for="accidentDescription">Accident Description</label>
+                                <label class="control-label" for="accidentDescription">Accident Description<strong class="formRequired">*</strong></label>
                                 <textarea rows="5" class="form-control" id="accidentDescription" name="accidentDescription"></textarea>
                             </div>
 
@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
                             <div class="form-group">
-                                <label class="control-label" for="reportingPersonName">Reporting Person’s Name</label>
+                                <label class="control-label" for="reportingPersonName">Reporting Person’s Name<strong class="formRequired">*</strong></label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="fa fa-user"></i>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="col-sm-12 col-md-4">
                             <div class="form-group">
-                                <label class="control-label" for="reportingPersonMobileNumber">Reporting Person’s Mobile Number</label>
+                                <label class="control-label" for="reportingPersonMobileNumber">Reporting Person’s Mobile Number<strong class="formRequired">*</strong></label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="fa fa-mobile fa-20x"></i>
@@ -163,7 +163,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
                             <div class="form-group">
-                                <label class=" control-label" for="fullName">Full Name</label>
+                                <label class=" control-label" for="fullName">Full Name<strong class="formRequired">*</strong></label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="fa fa-user"></i>
@@ -175,7 +175,7 @@
                         </div>
                         <div class="col-sm-12 col-md-4">
                             <div class="form-group">
-                                <label class="control-label" for="mobileNumber">Mobile Number</label>
+                                <label class="control-label" for="mobileNumber">Mobile Number<strong class="formRequired">*</strong></label>
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="fa fa-mobile fa-20x"></i>
@@ -201,7 +201,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label class="control-label" for="message">Message</label>
+                                <label class="control-label" for="message">Message<strong class="formRequired">*</strong></label>
                                 <textarea rows="5" class="form-control" id="message" name="message"></textarea>
                             </div>
                         </div>
@@ -350,28 +350,6 @@
         $(function() {
             $('.datetimepicker').datetimepicker();
         });
-        $('.main-slider').owlCarousel({
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 10000,
-            autoplayHoverPause: true,
-            margin: 0,
-            nav: true,
-            dots: false,
-            lazyLoad: true,
-            navText: ["<span class='hidden'>Previous Slide</span><i class='fa fa-angle-left'></i>", "<span class='hidden'>Next Slide</span><i class='fa fa-angle-right'></i>"],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 1
-                }
-            }
-        })
         $("#hidesociallinks").click(function() {
             $(".sociallink").toggleClass("hidesociallinks", "showsociallinks"), $("#hidesociallinks i").toggleClass("fa-caret-right", "fa-caret-left")
         })
