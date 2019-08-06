@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,10 +25,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <i class="fa"></i><span class="hidden">Main Navigation Toggle Button</span>
                     </button>
                     <a href="#" class="navbar-brand">
                         <img src="images/logo.png" class="img-responsive hidden-xs" alt="Surat Municipal Corporation Logo">
@@ -72,7 +70,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
+                        <table id="alert-table" class="table table-bordered table-striped" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Alert Title</th>
@@ -142,15 +140,7 @@
                                     <td>20/05/2019 10:00:45</td>
                                 </tr>
                             </tbody>
-
                         </table>
-                        <ul class="pagination pull-right">
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -232,22 +222,17 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 govlinks">
                     <div class="row clearfix">
                         <div class="col-sm-6">
-                            <a href="http://india.gov.in/" target="_blank" rel="nofollow" title="india.gov.in - National Portal of India"><img src="images/india-portal.png" alt="india.gov.in - National Portal of India" border="0" class="img-responsive" style="top: -615px;"></a>
-                            <a href="http://suratsmartcity.com/" target="_blank" rel="nofollow" title="Surat Smart City Development Ltd."><img src="images/ssdl-portal.png" alt="Surat Smart City Development Ltd." border="0" class="img-responsive" style="top: -615px;"></a>
-                            <a href="https://play.google.com/store/apps/details?id=in.smc" target="_blank" rel="nofollow" title="Google Play Store"><img src="images/googleplaystore.png" alt="Android App on Google Play Store" class="img-responsive" style="top: -615px;"></a>
+                            <a href="http://india.gov.in/" target="_blank" rel="nofollow" title="india.gov.in - National Portal of India"><img src="images/india-portal.png" alt="india.gov.in - National Portal of India" border="0" class="img-responsive"></a>
+                            <a href="http://suratsmartcity.com/" target="_blank" rel="nofollow" title="Surat Smart City Development Ltd."><img src="images/ssdl-portal.png" alt="Surat Smart City Development Ltd." border="0" class="img-responsive"></a>
+                            <a href="https://play.google.com/store/apps/details?id=in.smc" target="_blank" rel="nofollow" title="Google Play Store"><img src="images/googleplaystore.png" alt="Android App on Google Play Store" class="img-responsive"></a>
                         </div>
                         <div class="col-sm-6">
-                            <a href="http://gujaratindia.com/" target="_blank" rel="nofollow" title="gujaratindia.com - Gujarat State Portal"><img src="images/gujarat-portal.png" alt="gujaratindia.com - Gujarat State Portal" class="img-responsive" style="top: -615px;"></a>
-                            <a href="https://surat.data.gov.in/" target="_blank" rel="nofollow" title="surat.data.gov.in - Open Data Portal"><img src="images/suratopendata-portal.png" alt="surat.data.gov.in - Open Data Portal" class="img-responsive" style="top: -615px;"></a>
-                            <a href="https://itunes.apple.com/in/app/surat-municipal-corporation/id766167352" target="_blank" rel="nofollow" title="Apple App Store"><img src="images/applestore.png" alt="Apple App on Apple App Store" class="img-responsive" style="top: -615px;"></a>
+                            <a href="http://gujaratindia.com/" target="_blank" rel="nofollow" title="gujaratindia.com - Gujarat State Portal"><img src="images/gujarat-portal.png" alt="gujaratindia.com - Gujarat State Portal" class="img-responsive"></a>
+                            <a href="https://surat.data.gov.in/" target="_blank" rel="nofollow" title="surat.data.gov.in - Open Data Portal"><img src="images/suratopendata-portal.png" alt="surat.data.gov.in - Open Data Portal" class="img-responsive"></a>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
         <div class="footer-social-links">
             <div class="container">
@@ -287,7 +272,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src=" https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
     <script>
+        $(document).ready(function() {
+            $('#alert-table').DataTable();
+        });
         $("#hidesociallinks").click(function() {
             $(".sociallink").toggleClass("hidesociallinks", "showsociallinks"), $("#hidesociallinks i").toggleClass("fa-caret-right", "fa-caret-left")
         })
