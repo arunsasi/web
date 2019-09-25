@@ -69,13 +69,32 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-8">
-                    <img src="images/traffic.png" srcset="images/traffic@2x.png 2x">
+                <div class="col-sm-9">
+                    <img src="images/traffic.png" srcset="images/traffic@2x.png 2x" class="img-responsive">
                     <!--
                     <div class="embed-responsive embed-responsive-100x400px">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34190.191266882735!2d72.81272822696987!3d21.170868059432536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C+Gujarat!5e0!3m2!1sen!2sin!4v1556994725871!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
 -->
+                </div>
+                <div class="col-sm-3">
+
+                    <div>
+                        <a class="weatherwidget-io" href="https://forecast7.com/en/21d1772d83/surat/" data-label_2="WEATHER" data-font="Roboto" data-mode="Current" data-days="3" data-theme="retro-sky">WEATHER</a>
+                        <script>
+                            ! function(d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = 'https://weatherwidget.io/js/widget.min.js';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            }(document, 'script', 'weatherwidget-io-js');
+
+                        </script>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,6 +116,7 @@
                                     autoDisplay: false
                                 }, 'google_translate_element');
                             }
+
                         </script>
                         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -200,6 +220,7 @@
         $("#hidesociallinks").click(function() {
             $(".sociallink").toggleClass("hidesociallinks", "showsociallinks"), $("#hidesociallinks i").toggleClass("fa-caret-right", "fa-caret-left")
         })
+
     </script>
 
 
