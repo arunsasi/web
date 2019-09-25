@@ -26,10 +26,12 @@
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <i class="fa"></i><span class="hidden">Main Navigation Toggle Button</span>
                     </button>
-                    <a href="#" class="navbar-brand">
-                        <img src="images/logo.png" class="img-responsive hidden-xs" alt="Surat Municipal Corporation Logo">
-                        <img src="images/logo-small.png" class="img-responsive visible-xs" alt="Surat Municipal Corporation Logo">
-                    </a>
+                    <!--
+<a href="#" class="navbar-brand">
+    <img src="images/logo.png" class="img-responsive hidden-xs" alt="Surat Municipal Corporation Logo">
+    <img src="images/logo-small.png" class="img-responsive visible-xs" alt="Surat Municipal Corporation Logo">
+</a>
+-->
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -69,31 +71,37 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
-                    <img src="images/traffic.png" srcset="images/traffic@2x.png 2x" class="img-responsive">
-                    <!--
-                    <div class="embed-responsive embed-responsive-100x400px">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34190.191266882735!2d72.81272822696987!3d21.170868059432536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C+Gujarat!5e0!3m2!1sen!2sin!4v1556994725871!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <div class="col-sm-4">
+                    <div class="box">
+                        <h2>Overall Congestion Level</h2>
+                        <canvas id="foo" style="height: 95px"></canvas>
                     </div>
--->
+                </div>
+                <div class="col-sm-4">
+                    <div class="box">
+                        <h2>City Mobility Index</h2>
+                        <div class="box-text">2.0</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="box">
+                        <h2>Current Weather</h2>
+                        <div>
+                            <a class="weatherwidget-io" href="https://forecast7.com/en/21d1772d83/surat/" data-font="Roboto" data-mode="Current" data-days="3" data-theme="pure">Surat, Gujarat, India</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="background: #eee; margin: 0">
+                <div class="col-sm-9" style="background: #efefef; padding: 0">
+                    <img src="images/traffic.png" srcset="images/traffic@2x.png 2x" class="img-responsive">
                 </div>
                 <div class="col-sm-3">
-
-                    <div>
-                        <a class="weatherwidget-io" href="https://forecast7.com/en/21d1772d83/surat/" data-label_2="WEATHER" data-font="Roboto" data-mode="Current" data-days="3" data-theme="retro-sky">WEATHER</a>
-                        <script>
-                            ! function(d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (!d.getElementById(id)) {
-                                    js = d.createElement(s);
-                                    js.id = id;
-                                    js.src = 'https://weatherwidget.io/js/widget.min.js';
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                }
-                            }(document, 'script', 'weatherwidget-io-js');
-
-                        </script>
-
+                    <div class="alert-section">
+                        <h3>Traffic Alerts</h3>
+                        <div class="alert-box">
+                            <p><span>26/09/2019 10:00:00</span>Congestion is building up in Gajeria School Road</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,7 +124,6 @@
                                     autoDisplay: false
                                 }, 'google_translate_element');
                             }
-
                         </script>
                         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -215,14 +222,60 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
     <script>
         $("#hidesociallinks").click(function() {
             $(".sociallink").toggleClass("hidesociallinks", "showsociallinks"), $("#hidesociallinks i").toggleClass("fa-caret-right", "fa-caret-left")
         })
-
     </script>
+    <script>
+        ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://weatherwidget.io/js/widget.min.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'weatherwidget-io-js');
+    </script>
+    <script>
+        var opts = {
+            angle: 0.01,
+            lineWidth: 0.40,
+            pointer: {
+                length: 0.6,
+                strokeWidth: 0.035,
+                color: '#000000'
+            },
+            staticZones: [{
+                    strokeStyle: "#30B32D",
+                    min: 0,
+                    max: 40
+                }, //Red
+                {
+                    strokeStyle: "#FFDD00",
+                    min: 40,
+                    max: 60
+                }, // Yellow    
+                {
+                    strokeStyle: "#F03E3E",
+                    min: 60,
+                    max: 100
+                }, // Green
 
+            ],
+            limitMax: 'false',
+            limitMin: 'false',
+            highDpiSupport: true,
+
+        };
+        var target = document.getElementById('foo');
+        var gauge = new Gauge(target).setOptions(opts);
+        gauge.maxValue = 100;
+        gauge.animationSpeed = 32;
+        gauge.set(70);
+    </script>
 
 
 </body>

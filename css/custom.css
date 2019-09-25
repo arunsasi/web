@@ -438,6 +438,40 @@ strong.formRequired {
     border-color: #ffffff;
 }
 
+
+#foo {
+    display: block;
+    margin: 0 auto;
+}
+
+.box {
+    min-height: 150px;
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+    position: relative;
+    padding: 0px 45px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all .3s ease-in;
+    box-shadow: 0 0 16px rgba(148, 148, 148, .2);
+
+}
+
+.box h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1664c0;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.box-text {
+    font-size: 3em;
+    text-align: center;
+    padding: 18px 0 0 0;
+}
+
 @media (max-width: 767px) {
     .navbar {
         min-height: 50px;
